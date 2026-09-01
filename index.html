@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meke Financial Services - Quick, Easy and Reliable cash loans.">
+  <title>Meke Financial Services | Cash Loans</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">
+        <span class="brand-mark">M</span>
+        <span>
+          <strong>MEKE</strong>
+          <small>FINANCIAL SERVICES</small>
+        </span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+      <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#loans">Loans</a>
+        <a href="#requirements">Requirements</a>
+        <a href="#apply">Apply</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">QUICK • EASY • RELIABLE</p>
+          <h1>Cash when<br><span>you need it.</span></h1>
+          <p class="hero-text">
+            Simple cash-loan applications with a direct way to contact Meke Financial Services.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn btn-gold" href="#apply">Apply Now</a>
+            <a class="btn btn-light" href="#requirements">View Requirements</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="assets/cashloan-flyer.png" alt="Meke Financial Services cash loan offer">
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div><strong>30%</strong><span>Advertised interest</span></div>
+        <div><strong>3</strong><span>Months bank statement</span></div>
+        <div><strong>24/7</strong><span>Online application request</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="loans">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">OUR CASH LOANS</p>
+          <h2>Fast, straightforward and convenient.</h2>
+          <p>Start your application online or scan the QR code to contact us on WhatsApp.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">💰</div>
+            <h3>Cash Loans</h3>
+            <p>Request a cash-loan application and receive guidance on the next steps.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📱</div>
+            <h3>WhatsApp Application</h3>
+            <p>Scan the QR code or use the WhatsApp button to start your application.</p>
+          </article>
+          <article class="card">
+            <div class="icon">⚡</div>
+            <h3>Quick Process</h3>
+            <p>Submit the required information so your application can be reviewed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="requirements">
+      <div class="container requirements-grid">
+        <div>
+          <p class="eyebrow">REQUIREMENTS</p>
+          <h2>What you need to apply</h2>
+          <ul class="check-list">
+            <li>Identity documents</li>
+            <li>3-month bank statement</li>
+            <li>Latest payslip</li>
+          </ul>
+          <p class="note">
+            The advertised 30% interest rate is taken from the supplied promotional material.
+            Confirm the applicable rate, fees, repayment period and eligibility directly with Meke Financial Services before accepting a loan.
+          </p>
+        </div>
+
+        <div class="qr-box">
+          <p class="qr-label">SCAN TO APPLY ON WHATSAPP</p>
+          <img src="assets/whatsapp-qr.png" alt="QR code to contact Meke Financial Services on WhatsApp">
+          <p>Scan with your phone camera.</p>
+          <a class="btn btn-dark" href="https://wa.me/264813027355?text=Hello%20Meke%20Financial%20Services.%20I%20would%20like%20to%20apply%20for%20a%20cash%20loan.%20Please%20send%20me%20the%20application%20requirements." target="_blank" rel="noopener">Open WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apply">
+      <div class="container apply-grid">
+        <div class="apply-intro">
+          <p class="eyebrow">ONLINE APPLICATION</p>
+          <h2>Start your application</h2>
+          <p>
+            Complete the short form below. When you submit it, WhatsApp will open with your information ready to send to Meke Financial Services.
+          </p>
+          <div class="mini-contact">
+            <p><strong>Call:</strong> <a href="tel:+264813027355">081 302 7355</a></p>
+            <p><strong>Alternative:</strong> <a href="tel:+264852449825">085 244 9825</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info.meke2@gmail.com">info.meke2@gmail.com</a></p>
+          </div>
+        </div>
+
+        <form id="loanForm" class="loan-form">
+          <label>Full name
+            <input type="text" id="name" required placeholder="Your full name">
+          </label>
+
+          <label>Phone number
+            <input type="tel" id="phone" required placeholder="081 234 5678">
+          </label>
+
+          <label>Loan amount requested (N$)
+            <input type="number" id="amount" min="1" required placeholder="e.g. 5000">
+          </label>
+
+          <label>Employment / income status
+            <select id="income" required>
+              <option value="">Select one</option>
+              <option>Employed</option>
+              <option>Self-employed</option>
+              <option>Other income</option>
+            </select>
+          </label>
+
+          <label>Message
+            <textarea id="message" rows="4" placeholder="Tell us anything important about your application."></textarea>
+          </label>
+
+          <button class="btn btn-gold full" type="submit">Continue on WhatsApp</button>
+          <p class="form-note">Your form does not store information on this website; it prepares a WhatsApp message on your device.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-box">
+        <div>
+          <p class="eyebrow">CONTACT US</p>
+          <h2>Ready to apply?</h2>
+          <p>Call, email or message Meke Financial Services.</p>
+        </div>
+        <div class="contact-details">
+          <a href="tel:+264813027355">📞 081 302 7355</a>
+          <a href="tel:+264852449825">📞 085 244 9825</a>
+          <a href="mailto:info.meke2@gmail.com">✉️ info.meke2@gmail.com</a>
+          <a href="https://wa.me/264813027355?text=Hello%20Meke%20Financial%20Services.%20I%20would%20like%20to%20apply%20for%20a%20cash%20loan.%20Please%20send%20me%20the%20application%20requirements." target="_blank" rel="noopener" class="whatsapp-link">💬 WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong>MEKE FINANCIAL SERVICES</strong>
+        <p>Quick. Easy. Reliable.</p>
+      </div>
+      <p>© <span id="year"></span> Meke Financial Services. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
