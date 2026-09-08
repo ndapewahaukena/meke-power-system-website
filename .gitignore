@@ -1,0 +1,5 @@
+
+backend/uploads/
+backend/applications.json
+backend/.env
+node_modules/

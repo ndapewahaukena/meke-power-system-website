@@ -1,4 +1,3 @@
-
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
 
@@ -7,32 +6,75 @@ menuBtn.addEventListener("click", () => {
 });
 
 document.querySelectorAll("#nav a").forEach(link => {
-  link.addEventListener("click", () => nav.classList.remove("open"));
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+  });
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+
+// ===============================
+// LOAN APPLICATION
+// ===============================
+
 const loanForm = document.getElementById("loanForm");
-loanForm.addEventListener("submit", function (event) {
+
+loanForm.addEventListener("submit", async function (event) {
   event.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const amount = document.getElementById("amount").value.trim();
-  const income = document.getElementById("income").value;
-  const message = document.getElementById("message").value.trim();
+  const submitButton = loanForm.querySelector("button[type='submit']");
 
-  const text =
-`Hello Meke Financial Services. I would like to apply for a cash loan.
+  // Change button while submitting
+  submitButton.disabled = true;
+  submitButton.textContent = "Submitting...";
 
-Full name: ${name}
-Phone: ${phone}
-Loan amount requested: N$${amount}
-Income status: ${income}
-Message: ${message || "None"}
+  try {
+    // Collect all form fields AND uploaded documents
+    const formData = new FormData(loanForm);
 
-Please advise me on the next steps and required documents.`;
+    // Send application to backend
+    const response = await fetch(
+      "http://localhost:5000/api/applications",
+      {
+        method: "POST",
+        body: formData
+      }
+    );
 
-  const url = "https://wa.me/264813027355?text=" + encodeURIComponent(text);
-  window.open(url, "_blank", "noopener");
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+
+      alert(
+        "Application submitted successfully! " +
+        "Meke Financial Services has received your application."
+      );
+
+      // Clear the form
+      loanForm.reset();
+
+    } else {
+
+      alert(
+        "Application could not be submitted.\n\n" +
+        (result.message || "Please try again.")
+      );
+    }
+
+  } catch (error) {
+
+    console.error("Submission error:", error);
+
+    alert(
+      "Could not connect to the Meke server.\n\n" +
+      "Please make sure the backend server is running."
+    );
+
+  } finally {
+
+    // Restore button
+    submitButton.disabled = false;
+    submitButton.textContent = "Submit Loan Application";
+  }
 });
